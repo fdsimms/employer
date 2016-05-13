@@ -31,7 +31,6 @@ class App extends Component {
 App.propTypes = {
   items: PropTypes.array.isRequired,
   isFetching: PropTypes.bool.isRequired,
-  lastUpdated: PropTypes.number,
   dispatch: PropTypes.func.isRequired
 };
 
@@ -39,14 +38,12 @@ function mapStateToProps(state) {
   const { employees } = state;
   const {
     isFetching,
-    lastUpdated,
     items
   } = employees || { isFetching: true };
 
   return {
     items,
-    isFetching,
-    lastUpdated
+    isFetching
   };
 }
 
