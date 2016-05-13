@@ -144,6 +144,14 @@ screen:hover {
   font-style: italic;
 }
 
+.employee-job.dragging {
+  color: transparent;
+}
+
+.employee-job-container.is-over {
+  background-color: goldenrod;
+}
+
 .employee-name {
   font-weight: bold;
 }
