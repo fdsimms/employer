@@ -2,7 +2,7 @@ import { combineReducers } from "redux";
 import { REQUEST_EMPLOYEES, RECEIVE_EMPLOYEES, RECEIVE_EMPLOYEE } from "./actions";
 
 function employees(state = {
-  isFetching: false,
+  isFetching: true,
   items: []
 }, action) {
   switch (action.type) {
@@ -19,8 +19,7 @@ function employees(state = {
     });
   case RECEIVE_EMPLOYEES:
     return Object.assign({}, state, {
-      isFetching: false,
-      lastUpdated: action.receivedAt
+      isFetching: false
     });
   default:
     return state;

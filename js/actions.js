@@ -33,13 +33,13 @@ function fetchEmployee() {
         return response.json();
       }).then(json => {
         let employee = {
-          image: json.image_urls.epic,
+          imageUrl: json.image_urls.epic,
           name: faker.name.findName(),
           job: faker.name.jobTitle()
         };
         dispatch(receiveEmployee(employee));
       }).then(() => {
-        if (getState().employees.items.length == 5) {
+        if (getState().employees.items.length == 10) {
           dispatch(receiveEmployees());
         }
       });
@@ -49,7 +49,7 @@ function fetchEmployee() {
 function fetchEmployees() {
   return (dispatch) => {
     dispatch(requestEmployees());
-    for (let i = 0; i < 5; i++) {
+    for (let i = 0; i < 10; i++) {
       dispatch(fetchEmployee());
     }
   };
