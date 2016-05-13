@@ -34,8 +34,8 @@ function fetchEmployee() {
       }).then(json => {
         let employee = {
           imageUrl: json.image_urls.epic,
-          name: faker.name.findName(),
-          job: faker.name.jobTitle()
+          name: faker.fake("{{name.firstName}} {{name.lastName}}"),
+          job: faker.name.jobType()
         };
         dispatch(receiveEmployee(employee));
       }).then(() => {

@@ -12,18 +12,23 @@ class App extends Component {
 
   render() {
     const { isFetching, items } = this.props;
-    let toRender;
+    let index1,
+        index2;
     if (isFetching) {
 
     } else {
-      toRender = <EmployeesIndex employees={items} />;
+      index1 = <EmployeesIndex employees={items.slice(0, 5)} />;
+      index2 = <EmployeesIndex employees={items.slice(5)} />;
     }
 
     return (
       <div className="app">
         <Header />
         <main>
-          {toRender}
+          <div className="employee-indices">
+            {index1}
+            {index2}
+          </div>
         </main>
       </div>
     );

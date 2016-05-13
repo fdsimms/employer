@@ -21,7 +21,14 @@ ul {
 
 body {
   -webkit-font-smoothing: antialiased;
-  font-family: sans-serif;
+  background-color: #eee;
+  font-family: 'Playfair Display', sans-serif;
+}
+
+img {
+  display: block;
+  height: auto;
+  width: 100%;
 }
 
 input {
@@ -38,10 +45,16 @@ button {
   display: block;
 }
 
+
+main {
+  display: block;
+}
+
 .header {
   display: block;
-  height: 50px;
-  border-bottom: 1px solid #ddd;
+  height: 75px;
+  background-color: white;
+  border-bottom: 2px solid #ccc;
   position: relative;
 }
 
@@ -50,5 +63,60 @@ button {
   position: absolute;
   transform: translateY(-50%) translateX(-50%);;
   top: 50%;
+  color: purple;
   left: 50%;
+  font-weight: bold;
+}
+
+.employee-indices {
+  height: auto;
+  display: block;
+  width: 80%;
+  margin: 50px auto;
+}
+
+.employee {
+  float: left;
+  margin-right: 25px;
+  margin-bottom: 25px;
+}
+
+.employee:last-child {
+  margin-right: 0;
+}
+
+
+.employees {
+  margin-bottom: 25px;
+  display: block;
+  width: 75%;
+  margin: auto;
+}
+
+.employee-image {
+  display: block;
+  height: 125px;
+  width: 125px;
+  border: 3px solid #ccc;
+  border-radius: 50%;
+  overflow: hidden;
+  position: relative;
+}
+
+screen {
+  z-index: 1;
+  display: block;
+  height: 100%;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+screen:hover {
+  background-color: rgba(128, 0, 128, 0.2);
+}
+
+.employee-attributes {
+  font-size: 12px;
+  text-align: center;
 }
