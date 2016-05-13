@@ -22,7 +22,9 @@ class App extends Component {
     return (
       <div className="app">
         <Header />
-        {toRender}
+        <main>
+          {toRender}
+        </main>
       </div>
     );
   }
