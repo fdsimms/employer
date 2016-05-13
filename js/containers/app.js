@@ -1,6 +1,7 @@
 import React, { Component, PropTypes } from "react";
 import { connect } from "react-redux";
 import { fetchEmployeesIfNeeded } from "../actions";
+import Header from "../components/header";
 
 class App extends Component {
   componentDidMount() {
@@ -9,15 +10,9 @@ class App extends Component {
   }
 
   render() {
-    const { items, isFetching } = this.props;
-
     return (
       <div className="app">
-        { items[0] && items[0].name }
-        { items[0] && items[0].job }
-
-        { items.length }
-        { String(isFetching) }
+        <Header />
       </div>
     );
   }
