@@ -105,6 +105,14 @@ main {
   border: 3px solid #ccc;
   overflow: hidden;
   position: relative;
+  transition-property: transform;
+  transition-duration: 0.5s;
+  -webkit-transition-property: transform;
+  -webkit-transition-duration: 0.5s;
+}
+
+.employee-image:hover {
+  transform: rotate(90deg);
 }
 
 screen {
@@ -114,6 +122,10 @@ screen {
   position: absolute;
   top: 0px;
   width: 100%;
+  transition-property: transform;
+  transition-duration: 0.5s;
+  -webkit-transition-property: transform;
+  -webkit-transition-duration: 0.5s;
 }
 
 screen:hover {

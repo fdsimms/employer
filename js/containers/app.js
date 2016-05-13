@@ -17,7 +17,7 @@ class App extends Component {
         spinner;
 
     if (isFetching) {
-      spinner = <i className="fa-pulse spinner fa-spinner fa"></i>;
+      spinner = <i className="fa-spin spinner fa-cog fa"></i>;
     } else {
       index1 = <EmployeesIndex employees={items.slice(0, 5)} />;
       index2 = <EmployeesIndex employees={items.slice(5)} />;
