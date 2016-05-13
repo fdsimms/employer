@@ -1,5 +1,6 @@
 import { createStore, applyMiddleware } from "redux";
-import thunkMiddleware from "redux-thunk";
+// Thunk facilitates the use of async actions
+import thunk from "redux-thunk";
 import rootReducer from "./reducers";
 
 export default function configureStore(initialState) {
@@ -7,7 +8,7 @@ export default function configureStore(initialState) {
     rootReducer,
     initialState,
     applyMiddleware(
-      thunkMiddleware
+      thunk
     )
   );
 }
