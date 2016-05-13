@@ -26,7 +26,7 @@ function receiveEmployees() {
   };
 }
 
-function fetchEmployee(getState) {
+function fetchEmployee() {
   return (dispatch, getState) => {
     return fetch("http://uifaces.com/api/v1/random")
       .then(response => {
@@ -46,11 +46,11 @@ function fetchEmployee(getState) {
   };
 }
 
-function fetchEmployees(getState) {
+function fetchEmployees() {
   return (dispatch) => {
     dispatch(requestEmployees());
     for (let i = 0; i < 5; i++) {
-      dispatch(fetchEmployee(getState));
+      dispatch(fetchEmployee());
     }
   };
 }
