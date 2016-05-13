@@ -73,6 +73,7 @@ main {
   height: auto;
   background: #F7F7F7;
   display: block;
+  position: relative;
   width: 80%;
   max-width: 895px;
   margin: 0px auto 50px auto;
@@ -138,4 +139,15 @@ screen:hover {
 .employee-attributes {
   font-size: 12px;
   text-align: center;
+}
+
+i.spinner {
+  font-size: 6em;
+  color: purple;
+  text-align: center;
+  position: absolute;
+  left: 0;
+  display: block;
+  width: 100%;
+  margin: auto;
 }

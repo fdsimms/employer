@@ -13,10 +13,11 @@ class App extends Component {
   render() {
     const { isFetching, items } = this.props;
     let index1,
-        index2;
+        index2,
+        spinner;
 
     if (isFetching) {
-
+      spinner = <i className="fa-pulse spinner fa-spinner fa"></i>;
     } else {
       index1 = <EmployeesIndex employees={items.slice(0, 5)} />;
       index2 = <EmployeesIndex employees={items.slice(5)} />;
@@ -32,6 +33,7 @@ class App extends Component {
             employee, because we've already hired a new crew.
           </div>
           <div className="employee-indices">
+            {spinner}
             {index1}
             {index2}
           </div>
