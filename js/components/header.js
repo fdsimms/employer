@@ -1,7 +1,7 @@
 import React from "react";
 
 const Header = () => (
-  <header className="header group">
+  <header className="header">
     <h1 className="header-company">Employer</h1>
   </header>
 );
