@@ -5,6 +5,7 @@ import { DropTarget } from 'react-dnd';
 
 const employeeJobTarget = {
   drop(props) {
+    
   }
 };
 

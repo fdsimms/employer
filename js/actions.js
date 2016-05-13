@@ -4,6 +4,7 @@ import faker from "faker";
 export const REQUEST_EMPLOYEES = "REQUEST_EMPLOYEES";
 export const RECEIVE_EMPLOYEES = "RECEIVE_EMPLOYEES";
 export const RECEIVE_EMPLOYEE = "RECEIVE_EMPLOYEE";
+export const CHANGE_EMPLOYEE_JOB = "CHANGE_EMPLOYEE_JOB";
 
 function requestEmployees() {
   return {
@@ -35,7 +36,8 @@ function fetchEmployee() {
         let employee = {
           imageUrl: json.image_urls.epic,
           name: faker.fake("{{name.firstName}} {{name.lastName}}"),
-          job: faker.name.jobType()
+          job: faker.name.jobType(),
+          id: getState().employees.items.length
         };
         dispatch(receiveEmployee(employee));
       }).then(() => {
