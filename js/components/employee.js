@@ -1,5 +1,5 @@
 import React from "react";
-import EmployeeJob from "./employeeJob";
+import EmployeeJobContainer from "../containers/employeeJobContainer";
 
 const Employee = ({ employee }) => (
   <li className="employee">
@@ -9,7 +9,7 @@ const Employee = ({ employee }) => (
     </div>
     <ul className="employee-attributes">
       <li className="employee-name">{employee.name}</li>
-      <EmployeeJob job={employee.job} />
+      <EmployeeJobContainer job={employee.job} />
     </ul>
   </li>
 );

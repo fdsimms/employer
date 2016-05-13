@@ -15,11 +15,18 @@ function collect(connect, monitor) {
   };
 }
 
+
+
+
 class EmployeeJob extends Component {
   render() {
     const { connectDragSource, isDragging, job } = this.props;
+    let classes = "employee-job";
+    if (isDragging) {
+      classes += " " + "dragging";
+    }
     return connectDragSource(
-      <li className="employee-job">{ job }</li>
+      <li className={classes}>{ job }</li>
     );
   }
 }
