@@ -25,22 +25,6 @@ function receiveEmployees() {
   };
 }
 
-// function fetchEmployee() {
-//   return (dispatch, getState) => {
-//     debugger
-//     state = getState();
-//     return fetch("http://uifaces.com/api/v1/random")
-//       .then(response => {
-//         return response.json();
-//       }).then(json => {
-//         dispatch(receiveEmployee(json));
-//         if (state.items.length == 20) {
-//           dispatch(receiveEmployees());
-//         }
-//       });
-//   };
-// }
-
 function fetchEmployee(getState) {
   return (dispatch, getState) => {
     return fetch("http://uifaces.com/api/v1/random")
