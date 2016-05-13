@@ -1,3 +1,3 @@
 export const ItemTypes = {
-  job: "job"
+  EMPLOYEE_JOB: "employeeJob"
 };

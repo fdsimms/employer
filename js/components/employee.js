@@ -1,4 +1,5 @@
 import React from "react";
+import EmployeeJob from "./employeeJob";
 
 const Employee = ({ employee }) => (
   <li className="employee">
@@ -8,7 +9,7 @@ const Employee = ({ employee }) => (
     </div>
     <ul className="employee-attributes">
       <li className="employee-name">{employee.name}</li>
-      <li className="employee-job">{employee.job}</li>
+      <EmployeeJob job={employee.job} />
     </ul>
   </li>
 );
