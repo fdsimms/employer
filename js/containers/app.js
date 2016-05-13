@@ -3,6 +3,8 @@ import { connect } from "react-redux";
 import { fetchEmployeesIfNeeded } from "../actions";
 import EmployeesIndex from "../components/employeesIndex";
 import Header from "../components/header";
+import { DragDropContext } from "react-dnd";
+import HTML5Backend from "react-dnd-html5-backend";
 
 class App extends Component {
   componentDidMount() {
@@ -62,5 +64,5 @@ function mapStateToProps(state) {
   };
 }
 
-
-export default connect(mapStateToProps)(App);
+const appWithContext = DragDropContext(HTML5Backend)(App);
+export default connect(mapStateToProps)(appWithContext);
