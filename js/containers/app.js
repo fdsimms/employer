@@ -13,7 +13,9 @@ class App extends Component {
 
     return (
       <div className="app">
-        { items[0] && items[0].username }
+        { items[0] && items[0].name }
+        { items[0] && items[0].job }
+
         { items.length }
         { String(isFetching) }
       </div>

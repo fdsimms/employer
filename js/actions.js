@@ -1,4 +1,5 @@
 import fetch from "isomorphic-fetch";
+import faker from "faker";
 
 export const REQUEST_EMPLOYEES = "REQUEST_EMPLOYEES";
 export const RECEIVE_EMPLOYEES = "RECEIVE_EMPLOYEES";
@@ -31,10 +32,14 @@ function fetchEmployee(getState) {
       .then(response => {
         return response.json();
       }).then(json => {
-        dispatch(receiveEmployee(json));
-
+        let employee = {
+          image: json.image_urls.epic,
+          name: faker.name.findName(),
+          job: faker.name.jobTitle()
+        };
+        dispatch(receiveEmployee(employee));
       }).then(() => {
-        if (getState().employees.items.length == 10) {
+        if (getState().employees.items.length == 5) {
           dispatch(receiveEmployees());
         }
       });
@@ -44,7 +49,7 @@ function fetchEmployee(getState) {
 function fetchEmployees(getState) {
   return (dispatch) => {
     dispatch(requestEmployees());
-    for (let i = 0; i < 10; i++) {
+    for (let i = 0; i < 5; i++) {
       dispatch(fetchEmployee(getState));
     }
   };

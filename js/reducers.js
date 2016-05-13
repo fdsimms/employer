@@ -13,7 +13,6 @@ function employees(state = {
   case RECEIVE_EMPLOYEE:
     let newItems = state.items.slice();
     newItems.push(action.employee);
-
     return Object.assign({}, state, {
       isFetching: true,
       items: newItems
