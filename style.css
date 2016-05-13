@@ -1,5 +1,5 @@
 html, body, h1, h2, ul, li, h3, a, p, div, input, form,
-label, button {
+label, button, main, header {
   background: transparent;
   border:  0;
   color: inherit;
@@ -36,4 +36,19 @@ button {
   clear: both;
   content: "";
   display: block;
+}
+
+.header {
+  display: block;
+  height: 50px;
+  border-bottom: 1px solid #ddd;
+  position: relative;
+}
+
+.header-company {
+  font-size: 32px;
+  position: absolute;
+  transform: translateY(-50%) translateX(-50%);;
+  top: 50%;
+  left: 50%;
 }
