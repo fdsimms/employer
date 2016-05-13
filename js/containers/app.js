@@ -14,6 +14,7 @@ class App extends Component {
     const { isFetching, items } = this.props;
     let index1,
         index2;
+
     if (isFetching) {
 
     } else {
@@ -25,6 +26,11 @@ class App extends Component {
       <div className="app">
         <Header />
         <main>
+          <div className="employees-blurb">
+            At Employer, we value our amazing turnover rate. Go ahead,
+            hit refresh and check it out. You won't recognize a single
+            employee, because we've already hired a new crew.
+          </div>
           <div className="employee-indices">
             {index1}
             {index2}
