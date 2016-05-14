@@ -16,7 +16,7 @@ Employer is a made-up employees page for a made-up company called Employer.
 * The `faker` package is used for generating random names and job titles for employees.
 * Hovering over an employee's image will animate the image.
 * Clicking on an employee's image will open up a modal with a short, cut-and-paste bio about that employee.
-* Dragging one employee's job and dropping it on another's will swap the two jobs with help form the `react-dnd` package.
+* Dragging one employee's job and dropping it on another's will swap the two jobs with help from the `react-dnd` package.
 
 ## Main Tools
 * React
@@ -33,7 +33,7 @@ Employer is a made-up employees page for a made-up company called Employer.
 * `faker` for generating fake names and job titles
 * `webpack` for bundling .js files
 * `isomorphic-fetch` for a fetch polyfill
-* `eslint`
+* `eslint` for linting ES6
 
 ## Other
 * [uifaces.com][uif-link]'s API
