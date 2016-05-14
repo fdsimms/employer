@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from "react";
 import { connect } from "react-redux";
-import { fetchEmployeesIfNeeded } from "../actions";
+import { fetchEmployeesIfNeeded } from "../employeeActions";
 import EmployeesIndex from "../components/employeesIndex";
 import Header from "../components/header";
 import { DragDropContext } from "react-dnd";

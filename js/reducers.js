@@ -2,7 +2,7 @@ import { combineReducers } from "redux";
 import { REQUEST_EMPLOYEES,
          RECEIVE_EMPLOYEES,
          RECEIVE_EMPLOYEE,
-         CHANGE_EMPLOYEE_JOB } from "./actions";
+         CHANGE_EMPLOYEE_JOB } from "./employeeActions";
 
 function employees(state = {
   isFetching: true,

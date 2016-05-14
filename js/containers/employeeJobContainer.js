@@ -2,7 +2,7 @@ import React, { Component, PropTypes } from "react";
 import EmployeeJob from "../components/employeeJob";
 import { ItemTypes } from "../dndConstants";
 import { DropTarget } from "react-dnd";
-import { changeEmployeeJob } from "../actions";
+import { changeEmployeeJob } from "../employeeActions";
 import { connect } from "react-redux";
 import { compose } from "redux";
 

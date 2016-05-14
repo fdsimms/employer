@@ -1,5 +1,5 @@
 import { createStore, applyMiddleware } from "redux";
-// Thunk facilitates the use of async actions
+// Thunk facilitates the use of async employeeActions
 import thunk from "redux-thunk";
 import rootReducer from "./reducers";
 
