@@ -37,8 +37,17 @@ function employees(state = {
   }
 }
 
+function modals(state = [], action) {
+  switch (action.type) {
+
+  default:
+    return state;
+  }
+}
+
 const rootReducer = combineReducers({
-  employees
+  employees,
+  modals
 });
 
 export default rootReducer;
