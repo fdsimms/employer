@@ -29,11 +29,13 @@ class App extends Component {
       <div className="app">
         <Header />
         <main>
-          <div className="employees-blurb">
+          <p className="employees-blurb">
             At Employer, we value our amazing turnover rate. Go ahead,
             hit refresh and check it out. You won't recognize a single
-            employee, because we've already hired a new crew.
-          </div>
+            employee, because we've already hired a new crew. And feel
+            free to swap two employees' jobs by dragging and dropping.
+            They'll love that.
+          </p>
           <div className="employee-indices">
             {spinner}
             {index1}
