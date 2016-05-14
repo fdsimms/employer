@@ -105,14 +105,35 @@ main {
   border: 3px solid #ccc;
   overflow: hidden;
   position: relative;
-  transition-property: transform;
-  transition-duration: 0.5s;
-  -webkit-transition-property: transform;
-  -webkit-transition-duration: 0.5s;
 }
 
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  25% {
+    transform: rotate(45deg);
+  }
+
+  50% {
+    transform: rotate(0deg);
+  }
+
+  75% {
+    transform: rotate(-45deg);
+  }
+
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+
 .employee-image:hover {
-  transform: rotate(90deg);
+  animation-duration: 3s;
+  animation-name: rotation;
+  animation-iteration-count: infinite;
 }
 
 screen {
@@ -122,10 +143,6 @@ screen {
   position: absolute;
   top: 0px;
   width: 100%;
-  transition-property: transform;
-  transition-duration: 0.5s;
-  -webkit-transition-property: transform;
-  -webkit-transition-duration: 0.5s;
 }
 
 screen:hover {
@@ -149,11 +166,23 @@ screen:hover {
 }
 
 .employee-job-container.is-over {
-  background-color: goldenrod;
+  border: 1px solid purple;
+}
+
+.employee-job-container.can-drop {
+  border: 1px solid gold;
+}
+
+.employee-job-container {
+  border: 1px solid transparent;
 }
 
 .employee-name {
   font-weight: bold;
+}
+
+.employee-job-container:hover {
+  border: 1px solid purple;
 }
 
 .employee-attributes {

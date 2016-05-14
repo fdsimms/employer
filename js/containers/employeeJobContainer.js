@@ -12,27 +12,32 @@ const employeeJobTarget = {
     const fromObject = monitor.getItem();
     dispatch(changeEmployeeJob(fromObject.employeeId, job));
     dispatch(changeEmployeeJob(employeeId, fromObject.job));
+  },
+
+  canDrop(props, monitor) {
+    const fromObject = monitor.getItem();
+    return fromObject.employee !== props.employeeId;
   }
 };
 
 function collect(connect, monitor) {
   return {
     connectDropTarget: connect.dropTarget(),
-    isOver: monitor.isOver()
+    isOver: monitor.isOver(),
+    canDrop: monitor.canDrop()
   };
 }
 
 class EmployeeJobContainer extends Component {
-  componentWillReceiveProps() {
-    this.forceUpdate();
-  }
-
   render() {
-    const { connectDropTarget, isOver, job, employeeId } = this.props;
+    const { connectDropTarget, isOver, job, canDrop, employeeId } = this.props;
     let classes = "employee-job-container";
     if (isOver) {
       classes += " " + "is-over";
+    } else if (canDrop) {
+      classes += " " + "can-drop";
     }
+
     return connectDropTarget(
       <div className={classes}>
         <EmployeeJob employeeId={employeeId} job={job}/>
@@ -44,7 +49,8 @@ class EmployeeJobContainer extends Component {
 EmployeeJobContainer.propTypes = {
   job: PropTypes.string.isRequired,
   employeeId: PropTypes.number.isRequired,
-  isOver: PropTypes.bool.isRequired
+  isOver: PropTypes.bool.isRequired,
+  canDrop: PropTypes.bool.isRequired
 };
 
 export default DropTarget(ItemTypes.EMPLOYEE_JOB, employeeJobTarget, collect)(EmployeeJobContainer);
