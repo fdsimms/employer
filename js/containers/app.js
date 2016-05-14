@@ -28,7 +28,7 @@ class App extends Component {
 
     return (
       <div className="app">
-        <ModalContainer employeeId={modal.employeeId}/>
+        <ModalContainer />
         <Header />
         <main>
           <p className="employees-blurb">

@@ -13,13 +13,11 @@ class ModalContainer extends Component {
 }
 
 ModalContainer.propTypes = {
-  employeeId: PropTypes.number
+  employee: PropTypes.object
 };
 
 function mapStateToProps(state) {
-  const { items } = state.employees;
-  const { isShowing, modalEmployeeId } = state.modal;
-  const employee = items[modalEmployeeId];
+  const { isShowing, employee } = state.modal;
 
   return {
     isShowing,

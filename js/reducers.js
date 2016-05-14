@@ -39,13 +39,13 @@ function employees(state = {
 }
 
 function modal(state = {
-  modalEmployeeId: null,
+  employee: null,
   isShowing: false
 }, action) {
   switch (action.type) {
   case TOGGLE_MODAL:
     return Object.assign({}, state, {
-      employeeId: action.employeeId,
+      employee: action.employee,
       isShowing: !state.isShowing
     });
   default:
