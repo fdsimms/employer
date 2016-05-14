@@ -32,7 +32,7 @@ class App extends Component {
           <p className="employees-blurb">
             At Employer, we value our amazing turnover rate. Go ahead,
             hit refresh and check it out. You won't recognize a single
-            employee, because we've already hired a new crew. And feel
+            employee, because we'll have hired a new crew by then. And feel
             free to swap two employees' jobs by dragging and dropping.
             They'll love that.
           </p>
