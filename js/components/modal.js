@@ -1,15 +1,12 @@
 import React from "react";
 
-const show = (
-  <div>Showing</div>
-);
-
-const hide = (
-  <div>Hidden</div>
-);
-
-const Modal = ({ name, isShowing }) => (
-  isShowing ? show : hide
+const Modal = ({ employee, isShowing }) => (
+  isShowing ? (
+    <div>
+      <div className="modal-screen"></div>
+      <div className="modal-main"></div>
+    </div>
+  ) : null
 );
 
 export default Modal;

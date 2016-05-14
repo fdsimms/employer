@@ -6,7 +6,7 @@ class ModalContainer extends Component {
   render() {
     const { isShowing, employee } = this.props;
     const shouldRender = isShowing && !!employee;
-    const toRender = shouldRender ? (<Modal employee={employee.name}
+    const toRender = shouldRender ? (<Modal employee={employee}
                             isShowing={isShowing} />) : <div></div>;
     return toRender;
   }
