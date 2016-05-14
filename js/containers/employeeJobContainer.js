@@ -33,7 +33,7 @@ class EmployeeJobContainer extends Component {
   render() {
     const { connectDropTarget, isOver, job, canDrop, employeeId } = this.props;
     let classes = "employee-job-container";
-    if (isOver) {
+    if (isOver && canDrop) {
       classes += " " + "is-over";
     } else if (canDrop) {
       classes += " " + "can-drop";
