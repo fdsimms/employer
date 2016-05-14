@@ -1,10 +1,12 @@
 import React, { Component, PropTypes } from "react";
 import { ItemTypes } from '../dndConstants';
 import { DragSource } from 'react-dnd';
+import { connect } from "react-redux";
+
 
 const employeeJobSource = {
   beginDrag(props) {
-    return { job: props.job };
+    return { job: props.job, employeeId: props.employeeId };
   }
 };
 
@@ -14,9 +16,6 @@ function collect(connect, monitor) {
     isDragging: monitor.isDragging()
   };
 }
-
-
-
 
 class EmployeeJob extends Component {
   render() {
@@ -34,7 +33,8 @@ class EmployeeJob extends Component {
 EmployeeJob.propTypes = {
   connectDragSource: PropTypes.func.isRequired,
   isDragging: PropTypes.bool.isRequired,
-  job: PropTypes.string.isRequired
+  job: PropTypes.string.isRequired,
+  employeeId: PropTypes.number.isRequired
 };
 
 export default DragSource(ItemTypes.EMPLOYEE_JOB, employeeJobSource, collect)(EmployeeJob);

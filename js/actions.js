@@ -22,8 +22,15 @@ function receiveEmployee(json) {
 function receiveEmployees() {
   return {
     type: RECEIVE_EMPLOYEES,
-    isFetching: false,
-    receivedAt: Date.now()
+    isFetching: false
+  };
+}
+
+export function changeEmployeeJob(employeeId, job) {
+  return {
+    type: CHANGE_EMPLOYEE_JOB,
+    employeeId,
+    job
   };
 }
 

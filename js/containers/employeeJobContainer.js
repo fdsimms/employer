@@ -1,11 +1,17 @@
-import React, { Component, PropTypes } from 'react';
-import EmployeeJob from '../components/employeeJob';
-import { ItemTypes } from '../dndConstants';
-import { DropTarget } from 'react-dnd';
+import React, { Component, PropTypes } from "react";
+import EmployeeJob from "../components/employeeJob";
+import { ItemTypes } from "../dndConstants";
+import { DropTarget } from "react-dnd";
+import { changeEmployeeJob } from "../actions";
+import { connect } from "react-redux";
+import { compose } from "redux";
 
 const employeeJobTarget = {
-  drop(props) {
-    
+  drop(props, monitor) {
+    const { dispatch, employeeId, job } = props;
+    const fromObject = monitor.getItem();
+    dispatch(changeEmployeeJob(fromObject.employeeId, job));
+    dispatch(changeEmployeeJob(employeeId, fromObject.job));
   }
 };
 
@@ -17,15 +23,19 @@ function collect(connect, monitor) {
 }
 
 class EmployeeJobContainer extends Component {
+  componentWillReceiveProps() {
+    this.forceUpdate();
+  }
+
   render() {
-    const { connectDropTarget, isOver, job } = this.props;
+    const { connectDropTarget, isOver, job, employeeId } = this.props;
     let classes = "employee-job-container";
     if (isOver) {
       classes += " " + "is-over";
     }
     return connectDropTarget(
       <div className={classes}>
-        <EmployeeJob job={job} />
+        <EmployeeJob employeeId={employeeId} job={job}/>
       </div>
     );
   }
@@ -33,6 +43,7 @@ class EmployeeJobContainer extends Component {
 
 EmployeeJobContainer.propTypes = {
   job: PropTypes.string.isRequired,
+  employeeId: PropTypes.number.isRequired,
   isOver: PropTypes.bool.isRequired
 };
 
