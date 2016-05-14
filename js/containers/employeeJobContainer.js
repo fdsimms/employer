@@ -16,7 +16,8 @@ const employeeJobTarget = {
 
   canDrop(props, monitor) {
     const fromObject = monitor.getItem();
-    return fromObject.employee !== props.employeeId;
+    return (fromObject.employee !== props.employeeId &&
+            fromObject.job !== props.job);
   }
 };
 

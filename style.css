@@ -182,7 +182,7 @@ screen:hover {
 }
 
 .employee-job-container:hover {
-  border: 1px solid purple;
+  border: 1px solid #ccc;
 }
 
 .employee-attributes {
