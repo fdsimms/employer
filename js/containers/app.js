@@ -29,11 +29,13 @@ class App extends Component {
     return (
       <div className="app">
         <Header />
-        <ModalContainer />
+        <main>
+          <ModalContainer />
           <p className="employees-blurb">
-            At Employer, we value our amazing turnover rate. Go ahead,
+            At Employer, we're proud of our amazing turnover rate. Go ahead,
             hit refresh and check it out. You won't recognize a single
-            employee, because we'll have hired a new crew by then. And feel
+            employee, because we'll have hired a new crew by then. Click
+            on one of their pictures to see a short bio. And feel
             free to swap two employees' jobs by dragging and dropping.
             They'll love that.
           </p>
@@ -42,6 +44,7 @@ class App extends Component {
             {index1}
             {index2}
           </div>
+        </main>
       </div>
     );
   }
