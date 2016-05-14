@@ -1,9 +1,11 @@
 import React from "react";
 
-const Modal = ({ employee, isShowing }) => (
+const Modal = ({ employee, isShowing, handleCloseClick }) => (
   isShowing ? (
     <div className="modal">
       <div className="modal-main">
+        <i className="fa fa-times-circle-o close-modal-button"
+           onClick={handleCloseClick}/>
         <div className="modal-image">
           <img src={employee.imageUrl} />
         </div>

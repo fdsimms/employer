@@ -234,8 +234,22 @@ i.spinner {
   border: 3px solid #ccc;
   height: 200px;
   width: 200px;
-  float: left;
-  margin: 25px;
+  margin: auto;
+}
+
+i.close-modal-button {
+  position: absolute;
+  top: -8px;
+  right: -5px;
+  cursor: pointer;
+  font-size: 2em;
+  background: white;
+  color: purple;
+  border-radius: 50%;
+}
+
+.close-modal-button:hover {
+  color: gold;
 }
 
 .modal-blurb {

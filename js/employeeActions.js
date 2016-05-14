@@ -48,7 +48,7 @@ function fetchEmployee() {
         };
         dispatch(receiveEmployee(employee));
       }).then(() => {
-        if (getState().employees.items.length == 77) {
+        if (getState().employees.items.length == 10) {
           dispatch(receiveEmployees());
         }
       });
