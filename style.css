@@ -234,3 +234,16 @@ i.spinner {
   border-radius: 10px;
   padding: 10px;
 }
+
+.modal-image {
+  display: block;
+  border: 3px solid #ccc;
+  height: 200px;
+  width: 200px;
+  float: left;
+  margin: 25px;
+}
+
+.modal-blurb {
+  padding: 22px 10px 10px 25px;
+}
