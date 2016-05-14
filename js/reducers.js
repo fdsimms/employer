@@ -3,6 +3,7 @@ import { REQUEST_EMPLOYEES,
          RECEIVE_EMPLOYEES,
          RECEIVE_EMPLOYEE,
          CHANGE_EMPLOYEE_JOB } from "./employeeActions";
+import { TOGGLE_MODAL } from "./modalActions";
 
 function employees(state = {
   isFetching: true,
@@ -37,9 +38,16 @@ function employees(state = {
   }
 }
 
-function modals(state = [], action) {
+function modal(state = {
+  modalEmployeeId: null,
+  isShowing: false
+}, action) {
   switch (action.type) {
-
+  case TOGGLE_MODAL:
+    return Object.assign({}, state, {
+      employeeId: action.employeeId,
+      isShowing: !state.isShowing
+    });
   default:
     return state;
   }
@@ -47,7 +55,7 @@ function modals(state = [], action) {
 
 const rootReducer = combineReducers({
   employees,
-  modals
+  modal
 });
 
 export default rootReducer;

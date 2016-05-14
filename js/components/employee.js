@@ -2,9 +2,9 @@ import React from "react";
 import EmployeeJobContainer from "../containers/employeeJobContainer";
 import { connect } from "react-redux";
 
-const Employee = ({ employee, dispatch }) => (
+const Employee = ({ employee, dispatch, handleClick }) => (
   <li className="employee">
-    <div className="employee-image">
+    <div className="employee-image" onClick={handleClick}>
       <img src={employee.imageUrl} />
       <screen></screen>
     </div>

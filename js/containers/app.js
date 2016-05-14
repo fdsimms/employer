@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import { fetchEmployeesIfNeeded } from "../employeeActions";
 import EmployeesIndex from "../components/employeesIndex";
 import Header from "../components/header";
+import ModalContainer from "./modalContainer";
 import { DragDropContext } from "react-dnd";
 import HTML5Backend from "react-dnd-html5-backend";
 
@@ -13,7 +14,7 @@ class App extends Component {
   }
 
   render() {
-    const { isFetching, items } = this.props;
+    const { isFetching, items, modal } = this.props;
     let index1,
         index2,
         spinner;
@@ -27,6 +28,7 @@ class App extends Component {
 
     return (
       <div className="app">
+        <ModalContainer employeeId={modal.employeeId}/>
         <Header />
         <main>
           <p className="employees-blurb">
@@ -49,12 +51,13 @@ class App extends Component {
 
 App.propTypes = {
   items: PropTypes.array.isRequired,
+  modal: PropTypes.object.isRequired,
   isFetching: PropTypes.bool.isRequired,
   dispatch: PropTypes.func.isRequired
 };
 
 function mapStateToProps(state) {
-  const { employees } = state;
+  const { employees, modal } = state;
   const {
     isFetching,
     items
@@ -62,6 +65,7 @@ function mapStateToProps(state) {
 
   return {
     items,
+    modal,
     isFetching
   };
 }

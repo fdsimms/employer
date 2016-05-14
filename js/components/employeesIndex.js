@@ -1,10 +1,10 @@
 import React from "react";
-import Employee from "./employee";
+import EmployeeContainer from "../containers/employeeContainer";
 
 const EmployeesIndex = ({ employees }) => (
   <ul className="employees group">
     {employees.map((employee, i) =>
-      <Employee key={i} employee={employee} />
+      <EmployeeContainer key={i} employee={employee} />
     )}
   </ul>
 );

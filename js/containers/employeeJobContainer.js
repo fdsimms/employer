@@ -49,7 +49,7 @@ class EmployeeJobContainer extends Component {
 
 EmployeeJobContainer.propTypes = {
   job: PropTypes.string.isRequired,
-  employeeId: PropTypes.number.isRequired,
+  employeeId: PropTypes.number,
   isOver: PropTypes.bool.isRequired,
   canDrop: PropTypes.bool.isRequired
 };

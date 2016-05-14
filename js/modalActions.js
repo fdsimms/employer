@@ -1,8 +1,8 @@
 export const TOGGLE_MODAL = "TOGGLE_MODAL";
 
-export function toggleModal(modalId) {
+export function toggleModal(employee) {
   return {
     type: TOGGLE_MODAL,
-    modalId
+    employee
   };
 }
