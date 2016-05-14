@@ -28,9 +28,8 @@ class App extends Component {
 
     return (
       <div className="app">
-        <ModalContainer />
         <Header />
-        <main>
+        <ModalContainer />
           <p className="employees-blurb">
             At Employer, we value our amazing turnover rate. Go ahead,
             hit refresh and check it out. You won't recognize a single
@@ -43,7 +42,6 @@ class App extends Component {
             {index1}
             {index2}
           </div>
-        </main>
       </div>
     );
   }
