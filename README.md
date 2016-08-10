@@ -4,7 +4,7 @@
 
 ![image](assets/employer-screenshot.png)
 
-Employer is a made-up employees page for a made-up company called Employer. Created for Postlight's coding challenge.
+Employer is a made-up employees page for a made-up company called Employer.
 
 
 ## Setup
